@@ -1,0 +1,10 @@
+HostGator: http://www.hostgator.com/?irgwc=1&clickid=WZD1OuX7FQ7lxjO1AB1KQSzvUkj0ASUoiSQ%3A2w0&affpat=1
+
+How to get website online?
+
+1: get a domain     ~$12/yr
+1.1: get a webhost  ~$6/mo
+
+2: Upload files
+
+FTP setup like minecraft 

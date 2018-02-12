@@ -1,0 +1,48 @@
+GitHub Basics
+https://www.youtube.com/watch?v=0fKg7e37bQE&index=9&list=PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc
+
+Source Control: 
+git to track changes 
+
+visual github crutch?
+
+Copy git http://
+in git bash, use git clone http:// in desired folder 
+
+use git status in git folder
+	shows whats different between local folder an cloud folder 
+
+git add file.ext
+	adds file to cloud folder 
+	git add . adds everything in directory
+	git add -A adds -A for all
+
+git commit -m "-m adds message to commit"
+	locks file into the repository
+
+git push 
+	pushes commits to github.com 
+
+git pull
+	pulls from github.com into local machine 
+
+git
+	shows commands, basically help or man
+
+Workflow: 
+
+Start off with a --git pull-- to update local repository
+make changes
+	--git add -A -- everthing
+	--git commit -m "added commit"--
+
+Merge Conflicts: 
+
+When conflicts occur, must fix conflict
+	manually change conflict and delete helper notification
+	save the file
+	then
+		--git add -A --
+		--git commit--
+	esc :wq escapes commit
+	
