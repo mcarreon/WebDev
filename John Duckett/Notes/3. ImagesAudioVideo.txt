@@ -1,0 +1,144 @@
+Images Audio and Video
+
+Images are added with the 
+    <img>: element
+Has two attributes, the src "source of an image", and alt, "description of the image"
+
+Valid Attributes
+src alt align border height width hspace vspace ismap usemap longdesc name
+
+SRC:
+src tells you where to find the image
+images should reside on the site server
+
+ALT:
+must appear on every img element, value should be a text description of the image
+    shows when image cant be displayed
+    screen readers
+    search engines pull alt image names
+
+HEIGHT AND WIDTH:
+
+ismap and usemap:
+used with image maps
+
+Longdesc:
+used to indicate the URL of a doc containing a description for the image in more detail.
+
+ImageMaps:
+Two types
+    Client-side image maps: Tells the browser how the image will be divided up
+        use the <map> and <area> elements inside an <img> element
+            #name on the img element on the attribute on the map element it uses
+            map has the name to idetify itself
+            area contains the clickable hotspots
+                Area has serveral attributes:
+                accesskey alt shape coords href nohref target tabindex taborder notab
+                    Shape: default is a rectangle, but is required
+                    Coords: speciefs the area that is the clickable hotspot 
+                        uses params of shape, rectangle - 4 coords, first tow top left, second 2 bottom right
+                        circle - 3 coords, first two center third is radius
+                        polyhgon - two coordinates for each point, tri - 6, pent 10
+                    if areas overlap, the first in code takes precedence
+                    href and nohref: if you want to make sure that a part doesnt link, use nohref
+                    alt: specifies a text alternative
+                    target: specifies which frame or window the page is loaded into
+                    tabindex: specify order in which users tab
+        use the <map> element inside an <object> element
+            similar, but object carries the usemap attribute
+    
+    Server-side image maps: 
+        img sits inside an a element, img carries ismap attribute, tells browser to send the server x,y coordinatesrepresenting what part of the image the user clicked on 
+
+Choosing the Right Image Format:
+Most static images on the Web are classified as bitmapped images, divided into a grid of pixels
+    GIF:
+        lookup table for colors, indexed color format
+    JPEG: use for photo-realistic, or subtleshade differences
+    PNG: images with flat colors and hard edges 
+
+Adding FLash, Video, and Audio to web pages
+Often referred to as rich media 
+    many different formats
+    do not automatically show the different formats of rich media
+    need to learn a new element
+<object>
+    name of file and where to find, format of fiel, type of plug-in used to play the file
+    inside you can use the <param> element to pass extra info to the player
+    any markup inside obkect will be shown if the object cannot be rendered. 
+
+Adding Flash Movies
+    Youtube example
+        <object width=”425” height=”344”>
+            <param name=”movie” value=”http://www.youtube.com/v/dMH0bHeiRNg & hl=en & fs=1” > < /param >
+                indicates a movie to be loaded along with the URL
+            <param name=”allowFullScreen” value=”true”> < /param >
+                indicates whether the player should allow the user to view the movie in full-screen mode
+            <param name=”allowscriptaccess” value=”always”> < /param >
+                used to ensure that the flash movie can be played from different web sites
+            <embed src=”http://www.youtube.com/v/dMH0bHeiRNg& hl=en & fs=1”
+            type=”application/x-shockwave-flash” allowscriptaccess=”always”
+            allowfullscreen=”true” width=”425” height=”344” > < /embed >
+        </object>
+
+    Flash to a page
+        < object classid=”clsid:D27CDB6E-AE6D-11cf-96B8-444553540000”
+        width=”300” height=”200”
+        codebase=”http://download.macromedia.com/pub/shockwave/cabs/flash/
+        swflash.cab” >
+            < param name=”movie” value=”motion/flash_sample.swf” / >
+                specifies the flash movie
+            < param name=”play” value=”true” / >
+                specifies for the movie to play automatically
+            < param name=”loop” value=”false” / >
+                indicates that the movie should not loop
+        < embed src=”motion/flash_sample.swf” width=”300” height=”200” play=”true”
+        loop=”false” quality=”best” type=”application/x-shockwave-flash”
+        pluginspage=”http://www.macromedia.com/shockwave/download/index.cgi?
+        P1_Prod_Version=ShockwaveFlash” > < /embed >
+        src attribute indicates where, the height and width indicates player
+        < /object >
+
+    Adding flash using SWFObject
+        create a div to hold the Flash movie, then use CSS to make the div the same width and height as the SWF file, should also have an id attribute to uniquely identify that element. 
+    < ?xml version=”1.0” ? >
+    < !DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN”
+    “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd” >
+    < html xmlns=”http://www.w3.org/1999/xhtml” lang=”en” xml:lang=”en” >
+    < head >
+        < title > Adding a flash movie with SWF Object < /title >
+        <script type=”text/javascript” src=”swfobject.js”> < /script >
+        <script type=”text/javascript”>swfobject.embedSWF(“flash/flash_sample.swf”, “flash_movie”, “300”, “200”, “8.0.0”);
+        < /script >
+    < /head >
+< body >
+    <div id=”flash_movie”>This element can contain content that search
+    engines can index, and which is helpful to those who do not have Flash
+    installed. < /div >
+< /body >
+< /html >
+    this method is good for search engines
+    good for accessibility purposes
+
+Adding Videos to Your Site
+    Two things to consider
+        File Format: choose the format of the video
+        Plug-in needed to play that type of file
+            different formats require different plug-ins to play the movie
+
+Adding Audio to Your Site:
+    File format: different types of compression types
+    Plug-in needed to play the type of file: visitors need the correct plugin
+    MP3:compressed, capped quality
+    WAV:not compressed, high quality
+
+Adding Audio using default Media Players
+    < object width=”300” height=”42” type=”audio/mpeg” data=”audio/my_music.mp3” >
+        < param name=”src” value=”audio/my_music.mp3” / >
+        < param name=”autoplay” value=”true” / >
+        < param name=”autostart” value=”1” / >
+        < embed src=”audio/my_music.mp3” width=”300” height=”42” > < /embed >
+    < /object >
+
+Adding MP3s to your Pages Using Flash
+popular

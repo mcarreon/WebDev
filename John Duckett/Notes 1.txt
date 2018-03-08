@@ -1,0 +1,15 @@
+Chapter 1: Structuring Documents for the Web
+Book is using XHTML
+
+Two main parts to a page:
+    <head> element: Contains information about the page, CSS rules 
+
+    <body> element: contains the info that you actually see in the main browser window
+
+All attributes are made up of two parts
+    name: property of the element that you want to set
+    value: what the value of the property is supposed to be
+
+Editing Text:
+    <ins>: for adding text, underlined
+    <del>: crossed out, for deleting text

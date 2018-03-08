@@ -1,0 +1,119 @@
+Tables: 
+
+Basic table exp
+< table border=”1” >
+    < tr >
+        < td >Row 1, Column 1< /td >
+        < td >Row 1, Column 2< /td >
+    < /tr >
+    < tr >
+        < td >Row 2, Column 1< /td >
+        < td >Row 2, Column 2< /td >
+    < /tr >
+< /table >
+
+Start each row and cell on a new line and indent table cells inside table rows as shown 
+If a row or column contains a heading, <th> should be used in place of <td>
+
+Each cell must be represented by either a <td> or a <th> element in order for the table todisplay correctly, even if there is no data in the cell. 
+
+To place markup inside a table, it must nest within a table element. 
+
+Basic Table Elements and Attributes: 
+
+<table>
+    all universal attributes
+    basic event attributes for scripting
+    Attributes: 
+        rtl or ltr: right to left and vice versa
+        summary: provides summary for non visual browsers or broken tables, not rendered. 
+
+<tr> Table rows
+    carries 5 attributes
+        char: anchors allignment around an axis char ie. "." for cdecimal numbers
+            not supported at time of book
+        charoff: offset for the char attribute
+
+<td> and <th> Represent Table Cells
+    th are displayed in bold, and center horizontally aligned
+    td are left aligned and not in bold 
+    attributes only apply to the oe cell carrying it, overrides settings for table and any containing element
+        abbr: provides abbreviated version of content
+        axis: create variables ie. axis="heavy, old, valuable"
+            preserves data
+        char: similar to tr
+        charoff: sim to tr
+        colspan: used when a cell should span across more than one column 
+        headers: indicate which headers correspond to the cell 
+            supports voice browsers
+        rowspan: specifies the number of rows of the table a cell will span across
+        scope: indicates which cells the current header provides a label or header information for. 
+            does not have much support
+
+<caption>
+    appears directly after the opening <table> tag and before the first row
+        used by screen readers and search engines
+
+Grouping sections of a Table: 
+    spanning using the colspan:
+        colspan starting at the cell and to the right
+    spanning using rowspan:
+        rowspan starting at the left and moves to the right
+
+Splitting up tables using a Head, Body, and Foot
+    distinguish the body (data) and the headings or footers.
+    if table is too long for one screen, headings and footers can be turned into scroll bars
+        main browsers do not support at time of book
+    can use CSS to attach diofferent styles to the contents of the <thead><tbody><tfoot> elements 
+        <thead>: creates separate table header
+        <tbody>: indicates main body
+            can have multiple <tbody> to indicate different groups of data
+        <tfoot>: creates separate table footer 
+            must appear before the <tbody> element in the source doc
+        all three elements can carry the universal attributes
+
+Grouping Columns Using the <colgroup> element
+example, must be before <tr>
+    < table >
+        <colgroup span=”4” class=”mainColumns” />
+        <colgroup span=”2” class=”subTotalColumns” />
+        < tr >
+            < td > 1 < /td >
+            < td > 2 < /td >
+            < td > 3 < /td >
+            < td > 4 < /td >
+            < td > 5 < /td >
+            < td > 6 < /td >
+        < /tr >
+    < /table >
+
+Column Sharing Styles Using the <col> 
+    used to specify attribues of the columns in a <colgroup> 
+    does not imply structural grouping, used for presentation 
+    <colgroup span=”6”>
+        < col span=”5” class=”mainColumns” / >
+        < col span=”1” class=”totalColumn” / >
+    < /colgroup >
+
+Nested Tables: 
+    can nest a table inside a <td> 
+
+Accessible Tables: 
+    tables contain a lot of data and are good visual reps
+    for those on a voice browser or screen reader tables are hard to understand
+        add captions
+        always use <th> for headings
+        always put heading in the first row and second column
+        avoid nested tables
+        avoid rowspan and colspan, use scope and header attributes if they are used
+        Learn how vb or sr would read a table
+        use scope and headers attributes to clearly indicate which headings apply to which rows and columns 
+
+How to Linearize Tables: 
+    screen readers do linearization, the reader starts at the first row and reads the cells from left to right then moves to next row. 
+    Using id, scope, and headers attributes
+        adding scope to <th> helps indicate which cells that element is the heading for
+            if you give it value of row, that element is the header for that row
+            col - header for that column
+            have values for rowgroup and colgroup
+        headers does the opposite role to the scope, as used on <td> elements to indicate which headers corrsepond to that cell 
