@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <head>
         <title>Example Cafe Contact - community cafe in Newquay, Cornwall, UK</title>
-        <meta http-equiv=”Content-Type” content=”text/html; charset=iso-8859-1”/>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     </head>
-
 <body>
     <a href="index.html"><img src="images/logo.png" alt="example cafe" width="194" height="80"/></a>
         <div>
@@ -15,12 +15,36 @@
             <a href="opening.html">OPENING</a>
             CONTACT
         </div>    
-    
+    <h1>Contact us here!</h1>
+        <table>
+            <tr>
+                <td>Your email</td>
+                <td><input type="text" name="txtForm" id="emailForm" size="20" maxlength="250" /></td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td><textarea name="txtBody" id="emailBody" cols="50" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <td>How did you hear of us?</td>
+                <td>
+                    <select name="selReferrer">
+                        <option value="google">Google</option>
+                        <option value="ad">Local newspaper ad</option>
+                        <option value="friend">Friend</option>
+                        <option value="other">Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Newsletter</td>
+                <td><input type="checkbox" name="chkBody" id="newsletterSignup" checked="checked" />Keep this box checked if you would like to recieve email coupons and updates</td>
+            </tr>
+        </table>
+    <input type="submit" value="Send message" />
     <h2>Contact</h2>
         <p><address>12 Sea View, Newquay, Cornwall, UK</address></p>
         <p><a href="mailto:info@examplecafe.com">Mail Example Cafe</a></p>
         <p><a href="http://maps.google.com/maps?q=newquay">Find us on Google Maps</a></p>
-   
 </body>
-
 </html>
