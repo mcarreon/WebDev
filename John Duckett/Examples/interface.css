@@ -1,0 +1,14 @@
+/* style sheet for Example Cafe */
+
+body {font-family:arial, verdana, sans-serif;}
+
+h2 {font-family: georgia, times, serif;
+    color:#666666;}
+
+p {font-size:90%
+    color:#333333;}
+
+/* a specifies that it will only effect <a> elements inside the element id="navigation*/
+#navigation a {color:#3399cc;
+    text-decoration:none;}
+

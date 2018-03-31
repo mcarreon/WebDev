@@ -1,0 +1,64 @@
+Selectors
+    how you can use different types of selector to specify which elements a style sheet rule will apply to 
+-------------------------------------------------------------------------------------------
+Universal Selector
+    The universal selector is an asterisk and applies to all element types
+        *{}
+    sometimes used for default values, and is to be overridden by more specific selectors
+    different than body as it does not rely on the property being inherited from <body> rules
+-------------------------------------------------------------------------------------------
+Type Selector
+    matches all of the elements specified in the list 
+        h1, h2, h3 {}
+-------------------------------------------------------------------------------------------
+Class Selector
+    match a rule with an element carrying a class attribute matching the selector
+    can be done two ways
+        .classname {}
+        element.classname {}
+            more specifically, it targets only the elements that have the class
+    class attribute may also have several values separated by a space 
+        syntax for this
+            element.classname1.classname2 {}
+-------------------------------------------------------------------------------------------
+ID Selector
+    like the class selector but works on the value of id attributes
+        #idname
+    id attribute should be unique to one element
+-------------------------------------------------------------------------------------------
+Child Selector
+    Matches an element that is the direct child of another, separated by 
+        > symbol aka combinator 
+        element>childinelement {}
+    the child can only be the most direct child of the element
+-------------------------------------------------------------------------------------------
+Descendant Selector
+    like the child selector, except affects all childs 
+    the combinator is a space
+        element childelement {}
+-------------------------------------------------------------------------------------------
+Adjacent Sibling Selector
+    matches an element that is the next sibling of another. 
+        ie. to make the first paragraph after any level 1 heading a different style from other <p> elements 
+            h1+p {}
+-------------------------------------------------------------------------------------------
+General Sibilng Selector
+    matches an element that is a sibling of another, but does not have to directly precede that element 
+        h1~p {} 
+-------------------------------------------------------------------------------------------
+Using Child and Sibling Selectors to Reduce Dependence on Classes in Markup
+    child and adjacent sibling selectors are important
+        can be used to reduce the number of class attributes
+-------------------------------------------------------------------------------------------
+Attribute Selector
+    allows the ability to use attributes that an element carries and their values as selectors
+    Seveeral Types 
+        Existance - element[id]
+        Equality - element[id="idname"]
+        Space - element[class~="valuename"] 
+            works when value is a list
+        Hyphen - p[language|="en"]
+        Prefix - p[attr^"b"]
+        Substring - p[attr*"on"]
+        Suffix - p[attr$"x"]
+        
