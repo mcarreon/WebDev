@@ -1,0 +1,253 @@
+Cascading Style Sheets
+    What makes up a CSS rule
+    How to place CSS rules within a doc, and how to link an ext doc
+    How properties and values control presentation of different elements within a doc
+    How to control the presentation of text using CSS
+    How CSS is based on a box model, and how you can set props for these boxes
+
+CSS controls the style of the page, ie. size of font or color, space between items
+    works by allowing the user to specify rules that say how the content will appear 
+-------------------------------------------------------------------------------------------
+Introducing CSS
+    works by associating rules with elements
+    has two parts
+        selector: indicates which element/s the declaration applies to (separated by ',')
+        declaration: sets out how the elements referred to in the selector should be styled
+            td (Selector) { width: 36px; } (Declaration)
+        declaration is also split into two parts (separated by ':')
+            property: prop of the selected element to change
+            value: specification for the property
+-------------------------------------------------------------------------------------------
+Basic Example 
+    inside the exp, inside the <head>, there is a <link> that tells the browser where to find the style sheet. 
+        <link rel=”stylesheet” type=”text/css” href=”ch07_eg01.css” /> 
+    Various <td>s also have a class="code" spec to distinguish it from other <td>
+
+To comment: /* */ 
+Properties: (used in example)
+<body>
+    color: 
+    background-color:
+        always specify, as some people can change default background color 
+    font-family: 
+        can provide multiple fonts in the case that one is not available. 
+h1 p 
+    font-size:
+table
+    border-style:
+    border-width:
+    border-color:
+th
+    font-weight
+    padding:
+td.code
+    to select class 'code' elements
+-------------------------------------------------------------------------------------------
+Inheritance
+    when a property has applied to one element, it will be inherited by the child elements (elements inside the element)
+    If another rule is more specific about which elements it will apply to
+        then it will override the element of the containing element. 
+-------------------------------------------------------------------------------------------
+Where You Can Add CSS Rules
+    Two places in a HTML doc
+        inside a <style> element which sits inside the <head>
+            known as inline style sheet
+        as a value of a style attrib on any element that can carry a style 
+             <td style=”font-family:courier; padding:5px; border-style:solid; border-width:1px; border-color:#000000;”> 
+            known as inline style rule
+-------------------------------------------------------------------------------------------
+The <link> Element 
+    Used to describe relationship between two documents
+        nothing has to be done to activate the link
+        always empty element
+        it must carry three atribs: type, rel and href
+Attributes
+rel: required, specifies the relationship 
+    stylesheet for CSS
+type: specifies the MIME type of the doc being linked to
+    for CSS, text/css
+href: specifies the URL for the doc being linked to 
+    can be absolute or relative
+hreflang: specifies the language the resource is written in 
+    en-US
+media: specifies the output device for use in the doc
+    not always used, but increasingly important with the variation of devices
+    sceen, tty (terminal), tv, print, projection, handheld, braille, embossed, aural, all
+-------------------------------------------------------------------------------------------
+The <style> element 
+    Used inside the <head> to contain style sheet rules in a web page
+        sometimes used when a single page contains extra rules that do not apply to other pages on the site
+    Should always carry the type attribute
+    can also carry
+        dir lang media title type, some support id and src
+-------------------------------------------------------------------------------------------
+Advantages of External CSS Style Sheets 
+    If two or more docs need a tyle sheet, use an external style sheet
+        saves repetition of rules 
+        can change appearance of several pages
+        subsequent pages are quicker to load as the CSS is loaded after first page
+        can act as a style template for authors wanting to achieve the same style of doc
+        Because web pages do not contain the style rules, different style sheets can be    attached to same doc based off of the media being used
+        A style sheet can import and use styles from other style sheets, allows for modular dev and good reuse. (import into the style sheet, so you can save old rules)
+        If you remove the style sheet, you can make the site more accessible to those with visual impairments
+-------------------------------------------------------------------------------------------
+CSS Properties
+    see 7.1
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+Controlling Text
+    two groups of properties
+        those that directly effect the font and its appearance
+        those that would have the same effect on the text regardless of fonts used
+    typeface 
+        family of fonts - Arial family
+        tend to belong to two groups
+            serif and sans-serif
+                serif has extra curls on the letters
+                    serif fonts are generally easier to read for long periods
+                        not true for the internet due to resolution of computer screens
+                sans-serif tend to have straight nds
+            third common is monospace serif font
+                every letter is same width
+    font
+        specific member of that family - Arial 12-point bold
+-------------------------------------------------------------------------------------------
+font-family Property
+    allows the user to specify the typeface of the text 
+    browsers can only display text in the font if the typeface is installed in the computer
+    can also specify a list of typefaces in the event the typeface cannot be loaded
+        When using typefaces, the last option in the list should be a generic font
+            serif, sans-serif, monospace, cursive, fantasy
+    Try to choose fonts that have similar size to avoid layout issues
+    When designers use a specific typeface that is likely not on most computers
+        They use a GIF image for the text
+            frowned upon for long texts, make sure to use alt 
+-------------------------------------------------------------------------------------------
+font-size Property
+    Enables size specification
+        usually specified in pixels
+        can be provided with length
+            px em ex pt in cm pc mm
+        Absolute size (each of these values correspond to a fixed size)
+            xx-small x-small small large x-large xx-large 
+        Relative Size (relative to the surrounding text)
+            smaller larger
+        Percentage (calculated as a prop of the elememnt that contains the text)
+            2% - 100%
+            More widespread as it allows users to increase and decrease fonts
+-------------------------------------------------------------------------------------------
+font-weight Property
+    Fonts have different variations
+        bold italic
+    Values
+        normal bold bolder lighter 100 200 300 400 500 600 700 800 900
+    Bold is most commonly used
+-------------------------------------------------------------------------------------------
+font-style Property
+    specify the style of the font
+        normal italic oblique 
+-------------------------------------------------------------------------------------------
+font-variant Property
+    two values
+        normal
+        small-caps
+            looks like a smaller version of the uppercase letterset 
+-------------------------------------------------------------------------------------------
+font-stretch Property 
+    At time of writing, no support
+    sets the width of the characters in a font 
+        ultra-condensed extra-condensed condensed semi-condensed semi-expanded expanded extra-expanded ultra-expanded
+    Can take relative values
+        normal wider narrower
+-------------------------------------------------------------------------------------------
+font-size-adjust Property
+    Does not have support in the main browsers at time of writing (IE8 and Firefox 3)
+    Changes a font's aspect value 
+        ratio between the height of a lowercase letter x and the height of the font
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+Text Formatting 
+    affect the appearance and formating
+-------------------------------------------------------------------------------------------
+color Property
+    specifies the color of the text 
+        can be a hex for a color or a color name 
+-------------------------------------------------------------------------------------------
+text-align Property
+    works like the deprecated align attribute
+        aligns within its containing element 
+            left right center justify 
+-------------------------------------------------------------------------------------------
+vertical-align Property
+    working with inline elements, particular images, and portions of text
+        controls vertical positioning
+    values
+        baseline sub super top text-top middle bottom text-bottom 
+        can be a length and a percentage value 
+-------------------------------------------------------------------------------------------
+text-decoration Property
+    values
+        underline
+        overline
+        line-grough
+        blink
+            frowned (works in FF)
+-------------------------------------------------------------------------------------------
+text-indent Property 
+    indents the first line of text within an element
+-------------------------------------------------------------------------------------------
+text-shadow Property
+    supposed to greate a drop shadow
+        offset darkversion of the word
+    value has 4 components, color length length length
+        first two lengths specify how far from the original text the drop should fall
+        third specifies how blurred the drop shadow should be
+    At time of writing, does not work in IE8 or Firefox 3
+-------------------------------------------------------------------------------------------
+text-transform Property
+    specify the case for the content of an element 
+    values
+        none, capitalize, uppercase, lowercase 
+-------------------------------------------------------------------------------------------
+letter-spacing Property
+    controls tracking (gape between letters)
+        no tracking is normal gap, tight squeezed together, loose spread out 
+        spacing can also be set using different markers
+            ie. em or px
+-------------------------------------------------------------------------------------------
+word-spacing Property
+    sets the gap between words
+    value
+        unit of length 
+-------------------------------------------------------------------------------------------
+white-space Property 
+    browsers change two or more spaces next to each other into a single space
+    carriage returns are also a single space 
+    controls whether or not the white space is preserved
+        similar to <pre> and nowrap attribute
+-------------------------------------------------------------------------------------------
+direction Property
+    like the dir attribute and specifies which way the text should flow
+        ltr rtl inherit
+    in rtl the period appears on the left of the sentence 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Text Pseudo-Classes 
+    two pseudo-classes that may help with text, can render the firt letter or the first line of an element in a different way than the rest of that element
+-------------------------------------------------------------------------------------------
+first-letter Pseudo-Class
+    specify a rule for the first letter, usually used on the first character of a new page
+    ie. p.introduction:first-letter {font-size: 42px; }
+        the <p> element has a class attribute whose value is introduction
+-------------------------------------------------------------------------------------------
+first-line Pseudo-Class
+    render the first line of the paragraph differently, usually in bold
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+Selectors 
+see 7.2 
+
+
+
+
+
+
