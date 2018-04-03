@@ -1,0 +1,63 @@
+To collect information from a visitor, you use a form. 
+
+Intro:
+
+Text input, and submit buttons, used to send the form to the server
+    Select boxes, radio buttons, checkboxes, and text inputs can also be used
+
+A <form> element can contain the same HTML markup
+    When they enter information, a submit button is to be clicked, which indiactes the user has filled out the form
+        this then sends the form data to a web server
+        once the data arrives
+            something processes the data and sends a new web page back which responds to the request or acknowledgement
+When data is sent
+    sent in name/value pairs. the name corresponds to form control, and the value is what the user has entered, or the value of the option selected 
+        each value needs a name to distinguish 
+sample: 
+    <form action=”http://www.example.org/search.aspx” method=”get”>
+        <h3>Search the site</h3>
+        <input type=”text” name=”txtSearchItem” />
+        <input type=”submit” value=”Search” />
+    </form>
+each form needs 
+    action method
+    attributes
+        enctype accept accept-charset onsubmit onreset
+
+action
+    indactes what happens when the form is submitted
+method 
+    get - part of url
+    post - hides data in HTTP headers
+id
+    gives form unique identity
+name (dep)
+    pred to id
+onsubmit
+    when user clicks submit, an event fires
+        value is a script that runs when submit button is pressed
+onreset
+    some forms have a reset button that clears data
+    similar to onsubmit
+enctype
+    if you use post, enctype specifies how the browser encodes the data 
+        application/x-www-form-urlencoded
+            standard, cannot send some characters, replaced by other characters
+        multipart/form-data
+            sends data in parts, where each consec part corresponds to a form control, in the order it appears in the form. used for upload files
+    If enctype is not used, browsers use the first value
+accept-charset
+    diff languages are written in diff character sets
+accept
+    similar, but sets the content types that the server processing the form can handle
+    rarely supported
+target
+    used with <a> to show where the link should be loaded too
+try to keep form elements near the start or end of the doc to avoid whitespace
+
+Form Controls
+    text inputs
+        input boxes
+        single text
+        password
+        multi-line*
